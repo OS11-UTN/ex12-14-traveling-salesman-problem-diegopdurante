@@ -493,3 +493,10 @@ def set_value_on_node(matrix_to_fill, node_names, name_from, value, verbose = Fa
 def get_new_cost(cost, t, lamb):
     c_new = np.zeros(cost.shape)
     return cost + lamb*t
+
+def get_col_name(idx_from, idx_to, sep = "."):
+    return chr(ord('a')+idx_from) + sep + chr(ord('a')+idx_to)
+
+def get_col_idx(name, col_names):
+    idx_col = np.argwhere(name == col_names)[0][0]
+    return idx_col
